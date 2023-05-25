@@ -4,11 +4,10 @@ const Navbar = () => {
     const navItems = <>
         <li><Link to="/">Home</Link></li>
         <li><Link to="/menu">Our Menu</Link></li>
-        <li><a>Item 3</a></li>
+        <li><Link to="/order/salad">Order Food</Link></li>
     </>
     return (
         <>
-
             <div className="navbar fixed z-10 bg-opacity-30 max-w-6xl text-white bg-black">
                 <div className="navbar-start">
                     <div className="dropdown">

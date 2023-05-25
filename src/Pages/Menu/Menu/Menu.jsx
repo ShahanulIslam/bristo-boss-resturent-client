@@ -11,14 +11,12 @@ import saladImg from "../../../assets/menu/salad-bg.jpg"
 import soupImg from "../../../assets/menu/soup-bg.jpg"
 
 const Menu = () => {
-    const [menu] = useMenu()
-
-    const offered = menu.filter(item => item.category === "offered")
-    const desserts = menu.filter(item => item.category === "dessert")
-    const pizzas = menu.filter(item => item.category === "pizza")
-    const salads = menu.filter(item => item.category === "salad")
-    const soups = menu.filter(item => item.category === "soup")
-
+    const [menu] = useMenu();
+    const offered = menu.filter(item => item.category === "offered");
+    const desserts = menu.filter(item => item.category === "dessert");
+    const pizzas = menu.filter(item => item.category === "pizza");
+    const salads = menu.filter(item => item.category === "salad");
+    const soups = menu.filter(item => item.category === "soup");
 
     return (
         <div>
@@ -36,13 +34,13 @@ const Menu = () => {
             {/* Offered Section */}
             <MenuCategory items={offered}></MenuCategory>
             {/* Dessert Section */}
-            <MenuCategory items={desserts} title="Deserts"  img={dessertImg}></MenuCategory>
+            <MenuCategory items={desserts} title="desert"  img={dessertImg}></MenuCategory>
             {/* Pizzas Section */}
-            <MenuCategory items={pizzas} title="Pizzas"  img={pizzaImg}></MenuCategory>
+            <MenuCategory items={pizzas} title="pizza"  img={pizzaImg}></MenuCategory>
             {/* Salads Section */}
-            <MenuCategory items={salads} title="Salads"  img={saladImg}></MenuCategory>
+            <MenuCategory items={salads} title="salad"  img={saladImg}></MenuCategory>
             {/* Soups Section */}
-            <MenuCategory items={soups} title="Soups"  img={soupImg}></MenuCategory>
+            <MenuCategory items={soups} title="soup"  img={soupImg}></MenuCategory>
             
         </div>
     );
