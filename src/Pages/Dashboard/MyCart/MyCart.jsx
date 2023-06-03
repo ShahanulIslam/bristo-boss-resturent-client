@@ -77,7 +77,7 @@ const MyCart = () => {
                                 <td>{item.name}</td>
                                 <td>${item.price}</td>
                                 <td>
-                                    <button onClick={() => handleDelete(item)} className="btn bg-red-600 text-white"><FaTrashAlt></FaTrashAlt></button>
+                                    <button onClick={() => handleDelete(item)} className="btn bg-[#B91C1C] text-white"><FaTrashAlt></FaTrashAlt></button>
                                 </td>
                             </tr>
                         )}
