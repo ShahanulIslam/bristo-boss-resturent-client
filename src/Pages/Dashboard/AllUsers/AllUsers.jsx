@@ -9,6 +9,7 @@ const AllUsers = () => {
     const [axiosSecure] =useAxiosSecure()
     const { data: users = [], refetch } = useQuery(["users"], async () => {
         const res = await axiosSecure.get("/users")
+        // console.log(res.data);
         return res.data;
     })
 
