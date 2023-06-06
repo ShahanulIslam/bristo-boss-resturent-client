@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import useCart from '../../../hooks/useCart';
 import { FaTrashAlt } from 'react-icons/fa';
 import Swal from 'sweetalert2';
+import { Link } from 'react-router-dom';
 
 const MyCart = () => {
     const [cart, refetch] = useCart();
@@ -22,17 +23,17 @@ const MyCart = () => {
                 fetch(`http://localhost:5000/carts/${item._id}`, {
                     method: "DELETE",
                 })
-                .then(res => res.json())
-                .then(data => {
-                    if (data.deletedCount > 0) {
-                        refetch()
-                        Swal.fire(
-                            'Deleted!',
-                            'Your item has been deleted.',
-                            'success'
-                        )
-                    }
-                })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.deletedCount > 0) {
+                            refetch()
+                            Swal.fire(
+                                'Deleted!',
+                                'Your item has been deleted.',
+                                'success'
+                            )
+                        }
+                    })
             }
         })
     }
@@ -45,7 +46,7 @@ const MyCart = () => {
             <div className='uppercase flex font-semibold justify-evenly items-center h-[60px]'>
                 <h3 >Total items {cart.length}</h3>
                 <h3>Total price {price}</h3>
-                <button className='btn btn-warning btn-sm'>Pay</button>
+                <Link to="/dashboard/payment"><button className='btn btn-warning btn-sm'>Pay</button></Link>
             </div>
             <div className="overflow-x-auto w-full">
                 <table className="table w-full">
